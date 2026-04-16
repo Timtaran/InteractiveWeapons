@@ -1,10 +1,23 @@
-# Multiloader - Stonecutter
-A gradle project template allows you to make a multi-loaders+versions mod using [Multi-loader Template](https://github.com/jaredlll08/MultiLoader-Template/) and [Stonecutter](https://stonecutter.kikugie.dev/).
+<p align="center">
+  <img src="assets/logo.png" alt="logo" width="128" height="128">
+</p>
 
-This template is based on [Faboslav](https://github.com/Faboslav) mods, extracted to be used as template.
+<div align="center">
+  <h1>Interactive Guns</h1>
+  <p><i>Baw baw baw</i></p>
+</div>
 
-# How-to Setup
-// TODO
+<div align="center" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 12px;">
+  <a href="https://fabricmc.net/"><img src="assets/fabric_badge.png" alt="Available on Fabric"></a>
+  <a href="https://neoforged.net/"><img src="assets/neoforge_badge.png" alt="Available on NeoForge"></a>
+  <br>
+  <a href="https://modrinth.com/mod/architectury-api"><img src="assets/architectury_api_badge.png" alt="Requires Architectury API"></a>
+  <a href="https://modrinth.com/mod/vivecraft"><img src="assets/vivecraft_badge.png" alt="Requires Vivecraft"></a>
+  <br>
+  <a href="https://modrinth.com/mod/velthoric"><img src="assets/velthoric_badge.png" alt="Requires Velthoric"></a>
+  <a href="https://modrinth.com/mod/interactivemc"><img src="assets/interactivemc_badge.png" alt="Requires InteractiveMC"></a>
+</div>
 
----
-Note: This template has not carefully tested so there might be bugs, feel free to report or PR to make this template better!
+## Check this out
+
+I will put media here later

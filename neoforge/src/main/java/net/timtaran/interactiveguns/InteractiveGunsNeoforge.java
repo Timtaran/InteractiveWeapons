@@ -4,12 +4,14 @@
  */
 package net.timtaran.interactiveguns;
 
-import net.fabricmc.api.ModInitializer;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
 import net.timtaran.interactiveguns.init.InteractiveGuns;
 
-public class InteractiveGunsFabric implements ModInitializer {
-    @Override
-    public void onInitialize() {
+@Mod(InteractiveGuns.MOD_ID)
+public class InteractiveGunsNeoforge {
+
+    public InteractiveGunsNeoforge(IEventBus eventBus) {
         InteractiveGuns.init();
     }
 }
