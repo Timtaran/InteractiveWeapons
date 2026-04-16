@@ -43,29 +43,31 @@ repositories {
     maven("https://maven.kikugie.dev/releases") { name = "KikuGie Releases" }
     maven("https://maven.kikugie.dev/snapshots") { name = "KikuGie Snapshots" }
     maven("https://thedarkcolour.github.io/KotlinForForge/")
+
+    maven("https://jitpack.io")
+
+    maven("https://maven.architectury.dev/")
 }
 
 tasks {
 
     processResources {
         val expandProps = mapOf(
-            "javaVersion" to commonMod.propOrNull("java.version"),
-            "modId" to commonMod.id,
-            "modName" to commonMod.name,
-            "modVersion" to commonMod.version,
-            "modGroup" to commonMod.group,
-            "modAuthor" to commonMod.author,
-            "modDescription" to commonMod.description,
-            "modLicense" to commonMod.license,
-            "modGitHub" to commonMod.github,
-            "minecraftVersion" to commonMod.propOrNull("minecraft_version"),
-            "minMinecraftVersion" to commonMod.propOrNull("min_minecraft_version"),
-            "fabricLoaderVersion" to commonMod.depOrNull("fabric-loader"),
-            "fabricApiVersion" to commonMod.depOrNull("fabric-api"),
-            "neoForgeVersion" to commonMod.depOrNull("neoforge"),
-            "forgeVersion" to commonMod.depOrNull("forge"),
-            // "yaclVersion" to commonMod.depOrNull("yacl"),
-            "modMenuVersion" to commonMod.depOrNull("modmenu")
+            "java_version" to commonMod.propOrNull("java.version"),
+            "mod_id" to commonMod.id,
+            "mod_name" to commonMod.name,
+            "mod_version" to commonMod.version,
+            "mod_group" to commonMod.group,
+            "mod_author" to commonMod.author,
+            "mod_description" to commonMod.description,
+            "mod_license" to commonMod.license,
+            "mod_github" to commonMod.github,
+            "minecraft_version" to commonMod.propOrNull("minecraft_version"),
+            "min_minecraft_version" to commonMod.propOrNull("min_minecraft_version"),
+            "fabric_loader_version" to commonMod.depOrNull("fabric_loader"),
+            "fabric_api_version" to commonMod.depOrNull("fabric-api"),
+            "neoforge_version" to commonMod.depOrNull("neoforge"),
+            "mod_menu_version" to commonMod.depOrNull("modmenu")
         ).filterValues { it?.isNotEmpty() == true }.mapValues { (_, v) -> v!! }
 
         val jsonExpandProps = expandProps.mapValues { (_, v) -> v.replace("\n", "\\\\n") }
@@ -75,6 +77,10 @@ tasks {
         }
 
         filesMatching(listOf("pack.mcmeta", "fabric.mod.json")) {
+            expand(jsonExpandProps)
+        }
+
+        filesMatching(listOf("interactiveguns.mixins.json", "interactiveguns.fabric.mixins.json", "interactiveguns.neoforge.mixins.json")) {
             expand(jsonExpandProps)
         }
 

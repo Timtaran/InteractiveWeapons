@@ -12,6 +12,7 @@ pluginManagement {
         maven("https://maven.minecraftforge.net")
         maven("https://maven.kikugie.dev/snapshots")
         maven("https://maven.kikugie.dev/releases")
+        maven("https://jitpack.io")
     }
 }
 
@@ -22,11 +23,9 @@ plugins {
 
 val commonVersions = providers.gradleProperty("stonecutter_enabled_common_versions").orNull?.split(",")?.map { it.trim() } ?: emptyList()
 val fabricVersions = providers.gradleProperty("stonecutter_enabled_fabric_versions").orNull?.split(",")?.map { it.trim() } ?: emptyList()
-val forgeVersions = providers.gradleProperty("stonecutter_enabled_forge_versions").orNull?.split(",")?.map { it.trim() } ?: emptyList()
 val neoforgeVersions = providers.gradleProperty("stonecutter_enabled_neoforge_versions").orNull?.split(",")?.map { it.trim() } ?: emptyList()
 val dists = mapOf(
     "common" to commonVersions,
-    "forge" to forgeVersions,
     "fabric" to fabricVersions,
     "neoforge" to neoforgeVersions
 )
@@ -47,4 +46,4 @@ stonecutter {
     }
 }
 
-rootProject.name = "examplemod"
+rootProject.name = "interactiveguns"
