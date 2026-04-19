@@ -30,9 +30,9 @@ dependencies {
 
     modApi("maven.modrinth:vivecraft:${commonMod.dep("vivecraft")}-fabric")
     runtimeOnly("org.lwjgl:lwjgl-openvr:${commonMod.dep("lwjgl")}")
+    runtimeOnly("org.lwjgl:lwjgl-openvr:${commonMod.dep("lwjgl")}:natives-windows")
     runtimeOnly("org.lwjgl:lwjgl-openvr:${commonMod.dep("lwjgl")}:natives-linux")
-    runtimeOnly("org.lwjgl:lwjgl-openvr:${commonMod.dep("lwjgl")}:natives-linux")
-    runtimeOnly("org.lwjgl:lwjgl-openvr:${commonMod.dep("lwjgl")}:natives-linux")
+    runtimeOnly("org.lwjgl:lwjgl-openvr:${commonMod.dep("lwjgl")}:natives-macos")
 
     runtimeOnly("com.illposed.osc:javaosc-core:0.9")
     runtimeOnly("com.github.bhaptics:tact-java:0.1.4")

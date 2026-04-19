@@ -10,8 +10,7 @@ import net.timtaran.interactiveguns.init.InteractiveGuns;
 
 @Mod(InteractiveGuns.MOD_ID)
 public class InteractiveGunsNeoforge {
-
     public InteractiveGunsNeoforge(IEventBus eventBus) {
-        InteractiveGuns.init();
+        InteractiveGuns.onInit();
     }
 }

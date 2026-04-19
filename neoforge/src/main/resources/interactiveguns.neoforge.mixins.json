@@ -4,9 +4,7 @@
   "package": "com.example.examplemod.mixin",
   "compatibilityLevel": "JAVA_${javaVersion}",
   "mixins": [],
-  "client": [
-    "MixinTitleScreen"
-  ],
+  "client": [],
   "server": [],
   "injectors": {
     "defaultRequire": 1

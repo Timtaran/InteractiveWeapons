@@ -31,22 +31,22 @@ public class Deagle {
                 new RVec3(0f, 0f, 0f),
                 new Quat()
         );
-        DeagleChamber chamber = (DeagleChamber) world.getBodyManager().createBody(
-                BodyRegistry.DEAGLE_CHAMBER,
-                transform,
-                EActivation.Activate,
-                body -> {
-                    body.setServerData(DeagleChamber.CARTRIDGE_AMOUNT, 0);
-                }
-        );
+//        DeagleChamber chamber = (DeagleChamber) world.getBodyManager().createBody(
+//                BodyRegistry.DEAGLE_CHAMBER,
+//                transform,
+//                EActivation.Activate,
+//                body -> {
+//                    body.setServerData(DeagleChamber.CARTRIDGE_AMOUNT, 0);
+//                }
+//        );
 
-        DeagleBolt bolt = (DeagleBolt) world.getBodyManager().createBody(
-                BodyRegistry.DEAGLE_BOLT,
-                transform,
-                EActivation.Activate,
-                body -> {
-                }
-        );
+//        DeagleBolt bolt = (DeagleBolt) world.getBodyManager().createBody(
+//                BodyRegistry.DEAGLE_BOLT,
+//                transform,
+//                EActivation.Activate,
+//                body -> {
+//                }
+//        );
 
         return frame;
     }

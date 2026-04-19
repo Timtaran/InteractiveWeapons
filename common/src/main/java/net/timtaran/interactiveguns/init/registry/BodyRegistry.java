@@ -31,7 +31,6 @@ public class BodyRegistry {
             .rigidProvider(DeagleFrame::createJoltBody)
             .behavior(VxNetSyncBehavior.ID)
             .behavior(VxSyncBehavior.ID)
-            .behavior(VxPersistenceBehavior.ID)
             .setPersistent(true)
             .build(InteractiveGunsIdentifier.get("deagle_frame"));
 
@@ -40,7 +39,6 @@ public class BodyRegistry {
             .rigidProvider(DeagleFrame::createJoltBody)
             .behavior(VxNetSyncBehavior.ID)
             .behavior(VxSyncBehavior.ID)
-            .behavior(VxPersistenceBehavior.ID)
             .setPersistent(true)
             .build(InteractiveGunsIdentifier.get("deagle_chamber"));
 
@@ -49,9 +47,8 @@ public class BodyRegistry {
             .rigidProvider(DeagleFrame::createJoltBody)
             .behavior(VxNetSyncBehavior.ID)
             .behavior(VxSyncBehavior.ID)
-            .behavior(VxPersistenceBehavior.ID)
             .setPersistent(true)
-            .build(InteractiveGunsIdentifier.get("deagle_chamber"));
+            .build(InteractiveGunsIdentifier.get("deagle_bolt"));
 
     /**
      * Registers all body types on the server side.

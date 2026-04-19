@@ -17,6 +17,9 @@
   "entrypoints": {
     "main": [
       "net.timtaran.interactiveguns.InteractiveGunsFabric"
+    ],
+    "client": [
+      "net.timtaran.interactiveguns.client.InteractiveGunsClientFabric"
     ]
   },
   "mixins": [

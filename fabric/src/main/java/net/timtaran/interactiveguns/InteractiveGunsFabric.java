@@ -10,6 +10,6 @@ import net.timtaran.interactiveguns.init.InteractiveGuns;
 public class InteractiveGunsFabric implements ModInitializer {
     @Override
     public void onInitialize() {
-        InteractiveGuns.init();
+        InteractiveGuns.onInit();
     }
 }
