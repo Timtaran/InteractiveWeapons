@@ -26,7 +26,7 @@ dependencies {
     modImplementation("com.terraformersmc:modmenu:${commonMod.dep("modmenu")}")
 
     modApi("com.github.Timtaran.Velthoric:velthoric-fabric:${commonMod.dep("velthoric")}")
-    modApi("com.github.Timtaran.InteractiveMC:interactivemc-fabric:${commonMod.dep("interactivemc")}")
+    modApi("com.github.Timtaran.interactivemc:interactivemc-fabric:${commonMod.dep("interactivemc")}")
 
     modApi("maven.modrinth:vivecraft:${commonMod.dep("vivecraft")}-fabric")
     runtimeOnly("org.lwjgl:lwjgl-openvr:${commonMod.dep("lwjgl")}")

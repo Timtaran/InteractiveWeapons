@@ -6,11 +6,7 @@ package net.timtaran.interactiveguns.gun.deagle;
 
 import com.github.stephengold.joltjni.Quat;
 import com.github.stephengold.joltjni.RVec3;
-import com.github.stephengold.joltjni.enumerate.EActivation;
-import net.timtaran.interactiveguns.gun.deagle.body.DeagleBolt;
-import net.timtaran.interactiveguns.gun.deagle.body.DeagleChamber;
 import net.timtaran.interactiveguns.gun.deagle.body.DeagleFrame;
-import net.timtaran.interactiveguns.init.registry.BodyRegistry;
 import net.xmx.velthoric.core.body.VxBody;
 import net.xmx.velthoric.core.body.VxBodyType;
 import net.xmx.velthoric.core.physics.world.VxPhysicsWorld;

@@ -1,13 +1,9 @@
 package net.timtaran.interactiveguns.gun.deagle.body;
 
-import com.github.stephengold.joltjni.BodyCreationSettings;
-import com.github.stephengold.joltjni.BoxShapeSettings;
-import com.github.stephengold.joltjni.ShapeSettings;
-import com.github.stephengold.joltjni.Vec3;
+import com.github.stephengold.joltjni.*;
 import com.github.stephengold.joltjni.enumerate.EMotionType;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.timtaran.interactivemc.body.type.IGrabbable;
 import net.xmx.velthoric.core.body.VxBody;
 import net.xmx.velthoric.core.body.VxBodyType;
 import net.xmx.velthoric.core.body.factory.VxRigidBodyFactory;
@@ -18,13 +14,17 @@ import net.xmx.velthoric.core.physics.world.VxPhysicsWorld;
 
 import java.util.UUID;
 
-public class DeagleBolt extends VxBody {
-    public DeagleBolt(VxBodyType type, VxPhysicsWorld physicsWorld, UUID id) {
+public class DeagleMagazine extends VxBody {
+    public static final VxServerAccessor<Integer> CARTRIDGE_AMOUNT = VxServerAccessor.create(DeagleMagazine.class, VxDataSerializers.INTEGER);
+    private static final float EMPTY_MASS = 0.2f;
+    private static final float CARTRIDGE_MASS = 0.02f;
+
+    public DeagleMagazine(VxBodyType type, VxPhysicsWorld physicsWorld, UUID id) {
         super(type, physicsWorld, id);
     }
 
     @Environment(EnvType.CLIENT)
-    public DeagleBolt(VxBodyType type, UUID id) {
+    public DeagleMagazine(VxBodyType type, UUID id) {
         super(type, id);
     }
 
@@ -35,6 +35,11 @@ public class DeagleBolt extends VxBody {
         try (ShapeSettings shapeSettings = new BoxShapeSettings(new Vec3(fullSize.getX() / 2, fullSize.getY() / 2, fullSize.getZ() / 2)); BodyCreationSettings bcs = new BodyCreationSettings()) {
             bcs.setMotionType(EMotionType.Dynamic);
             bcs.setObjectLayer(VxPhysicsLayers.MOVING);
+
+            MassProperties massProperties = bcs.getMassProperties();
+            massProperties.scaleToMass(EMPTY_MASS + CARTRIDGE_MASS * body.get(CARTRIDGE_AMOUNT));
+            bcs.setMassPropertiesOverride(massProperties);
+
             return factory.create(shapeSettings, bcs);
         }
     }
