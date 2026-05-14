@@ -17,6 +17,7 @@ java {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
     exclusiveContent {
         forRepository {
@@ -32,6 +33,10 @@ repositories {
         )
         filter { includeGroup("org.parchmentmc.data") }
     }
+
+    maven("https://maven.clwn.org/releases") { name = "ClownsProd Releases" }
+    maven("https://maven.clwn.org/snapshots") { name = "ClownsProd Snapshots" }
+
     maven("https://www.cursemaven.com")
     maven("https://api.modrinth.com/maven") {
         name = "Modrinth"

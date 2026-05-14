@@ -49,11 +49,7 @@ public class DeagleFrame extends VxBody implements IGrabbable {
             bcs.setMotionType(EMotionType.Dynamic);
             bcs.setObjectLayer(VxPhysicsLayers.MOVING);
 
-            MassProperties massProperties = bcs.getMassProperties();
-
-            if (massProperties == null) {
-                massProperties = new MassProperties();
-            }
+            MassProperties massProperties = bcs.getMassPropertiesOverride();
 
             massProperties.scaleToMass(1.15f);
             bcs.setMassPropertiesOverride(massProperties);

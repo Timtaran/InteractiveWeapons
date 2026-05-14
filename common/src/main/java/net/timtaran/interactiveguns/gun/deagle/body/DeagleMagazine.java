@@ -36,7 +36,7 @@ public class DeagleMagazine extends VxBody {
             bcs.setMotionType(EMotionType.Dynamic);
             bcs.setObjectLayer(VxPhysicsLayers.MOVING);
 
-            MassProperties massProperties = bcs.getMassProperties();
+            MassProperties massProperties = bcs.getMassPropertiesOverride();
             massProperties.scaleToMass(EMPTY_MASS + CARTRIDGE_MASS * body.get(CARTRIDGE_AMOUNT));
             bcs.setMassPropertiesOverride(massProperties);
 

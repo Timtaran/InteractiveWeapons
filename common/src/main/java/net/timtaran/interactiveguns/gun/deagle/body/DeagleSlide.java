@@ -30,7 +30,7 @@ public class DeagleSlide extends VxBody {
             bcs.setMotionType(EMotionType.Dynamic);
             bcs.setObjectLayer(VxPhysicsLayers.MOVING);
 
-            MassProperties massProperties = bcs.getMassProperties();
+            MassProperties massProperties = bcs.getMassPropertiesOverride();
             massProperties.scaleToMass(0.65f);
             bcs.setMassPropertiesOverride(massProperties);
 

@@ -35,9 +35,10 @@ dependencies {
     modCompileOnly("net.fabricmc:fabric-loader:${commonMod.dep("fabric_loader")}")
 
     modApi("com.github.Timtaran.Velthoric:velthoric-fabric:${commonMod.dep("velthoric")}")
-    modApi("com.github.Timtaran.interactivemc:interactivemc-fabric:${commonMod.dep("interactivemc")}")
 
-    modImplementation("maven.modrinth:vivecraft:${commonMod.dep("vivecraft")}-fabric")
+    modApi("net.timtaran.interactivemc:interactivemc-fabric:${commonMod.dep("interactivemc")}")
+
+    modImplementation(commonMod.modrinth("vivecraft", "${commonMod.dep("vivecraft")}-fabric"))
     runtimeOnly("org.lwjgl:lwjgl-openvr:${commonMod.dep("lwjgl")}")
     runtimeOnly("org.lwjgl:lwjgl-openvr:${commonMod.dep("lwjgl")}:natives-windows")
     runtimeOnly("org.lwjgl:lwjgl-openvr:${commonMod.dep("lwjgl")}:natives-linux")
