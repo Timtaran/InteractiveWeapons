@@ -25,7 +25,7 @@ dependencies {
     // Required dependencies
     modImplementation("com.terraformersmc:modmenu:${commonMod.dep("modmenu")}")
 
-    modApi("com.github.Timtaran.Velthoric:velthoric-fabric:${commonMod.dep("velthoric")}")
+    modApi("net.xmx.velthoric:velthoric-fabric:${commonMod.dep("velthoric")}")
     modApi("net.timtaran.interactivemc:interactivemc-fabric:${commonMod.dep("interactivemc")}")
 
     modImplementation(commonMod.modrinth("vivecraft", "${commonMod.dep("vivecraft")}-fabric"))

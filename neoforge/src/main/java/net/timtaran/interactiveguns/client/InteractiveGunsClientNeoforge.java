@@ -7,6 +7,7 @@ import net.timtaran.interactiveguns.init.InteractiveGuns;
 
 @Mod(value = InteractiveGuns.MOD_ID, dist = Dist.CLIENT)
 public class InteractiveGunsClientNeoforge {
+    // todo: model registration
     public InteractiveGunsClientNeoforge(IEventBus eventBus) {
         InteractiveGuns.onClientInit();
     }

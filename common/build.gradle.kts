@@ -34,7 +34,7 @@ dependencies {
     compileOnly("org.spongepowered:mixin:0.8.5")
     modCompileOnly("net.fabricmc:fabric-loader:${commonMod.dep("fabric_loader")}")
 
-    modApi("com.github.Timtaran.Velthoric:velthoric-fabric:${commonMod.dep("velthoric")}")
+    modApi("net.xmx.velthoric:velthoric-fabric:${commonMod.dep("velthoric")}")
 
     modApi("net.timtaran.interactivemc:interactivemc-fabric:${commonMod.dep("interactivemc")}")
 
