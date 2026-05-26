@@ -18,7 +18,7 @@ public class DeagleFrameModel {
 
     private static ModelPart root;
     private static ModelPart magazine;
-    private static ModelPart slider;
+    private static ModelPart slide;
     private static ModelPart frame;
 
     private static boolean initialized = false;
@@ -30,7 +30,7 @@ public class DeagleFrameModel {
         root = modelSet.bakeLayer(LAYER_LOCATION);
 
         magazine = root.getChild("magazine");
-        slider = root.getChild("slider");
+        slide = root.getChild("slide");
         frame = root.getChild("frame");
 
         initialized = true;
@@ -40,14 +40,14 @@ public class DeagleFrameModel {
         MeshDefinition meshdefinition = new MeshDefinition();
         PartDefinition partdefinition = meshdefinition.getRoot();
 
-        PartDefinition slider = partdefinition.addOrReplaceChild("slider", CubeListBuilder.create().texOffs(69, 106).addBox(-4.8F, -42.4F, -31.92F, 9.6F, 4.0F, 23.92F, new CubeDeformation(0.0F))
+        PartDefinition slide = partdefinition.addOrReplaceChild("slide", CubeListBuilder.create().texOffs(69, 106).addBox(-4.8F, -42.4F, -31.92F, 9.6F, 4.0F, 23.92F, new CubeDeformation(0.0F))
                 .texOffs(69, 135).addBox(3.2F, -39.2F, -32.0F, 2.4F, 7.2F, 24.0F, new CubeDeformation(0.0F))
                 .texOffs(0, 106).addBox(3.2F, -36.8F, -8.0F, 2.4F, 4.8F, 32.0F, new CubeDeformation(0.0F))
                 .texOffs(85, 68).addBox(-5.6F, -36.8F, -8.0F, 2.4F, 4.8F, 32.0F, new CubeDeformation(0.0F))
                 .texOffs(122, 135).addBox(-5.6F, -39.2F, -32.0F, 2.4F, 7.2F, 24.0F, new CubeDeformation(0.0F))
                 .texOffs(26, 184).addBox(-1.616F, -44.2128F, -27.44F, 3.232F, 1.8128F, 1.28F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-        PartDefinition sight_r1 = slider.addOrReplaceChild("sight_r1", CubeListBuilder.create().texOffs(183, 113).addBox(-4.0F, -3.2F, 0.0F, 3.2F, 3.2F, 3.2F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.4F, -41.6F, -28.0F, -0.6109F, 0.0F, 0.0F));
+        PartDefinition sight_r1 = slide.addOrReplaceChild("sight_r1", CubeListBuilder.create().texOffs(183, 113).addBox(-4.0F, -3.2F, 0.0F, 3.2F, 3.2F, 3.2F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.4F, -41.6F, -28.0F, -0.6109F, 0.0F, 0.0F));
 
         PartDefinition magazine = partdefinition.addOrReplaceChild("magazine", CubeListBuilder.create().texOffs(138, 106).addBox(-4.0F, -1.6F, -27.2F, 8.0F, 0.8F, 14.416F, new CubeDeformation(0.0F))
                 .texOffs(0, 184).addBox(-4.776F, -1.6F, -17.6F, 0.784F, 0.8F, 4.816F, new CubeDeformation(0.0F))
@@ -111,7 +111,7 @@ public class DeagleFrameModel {
         return magazine;
     }
 
-    public static ModelPart  getSlider() {
-        return slider;
+    public static ModelPart getSlide() {
+        return slide;
     }
 }

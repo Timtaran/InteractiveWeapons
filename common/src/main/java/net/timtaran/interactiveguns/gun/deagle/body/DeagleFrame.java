@@ -20,6 +20,7 @@ import net.timtaran.interactivemc.body.type.IGrabbable;
 import net.xmx.velthoric.core.body.VxBody;
 import net.xmx.velthoric.core.body.VxBodyType;
 import net.xmx.velthoric.core.body.factory.VxRigidBodyFactory;
+import net.xmx.velthoric.core.body.shape.VxBoxShape;
 import net.xmx.velthoric.core.physics.VxJoltBridge;
 import net.xmx.velthoric.core.physics.VxPhysicsLayers;
 import net.xmx.velthoric.core.physics.world.VxPhysicsWorld;
@@ -44,8 +45,9 @@ public class DeagleFrame extends VxBody implements IGrabbable {
 
     public static int createJoltBody(VxBody body, VxRigidBodyFactory factory) {
         Vec3 fullSize = new Vec3(0.0375f, 0.1625f, 0.275f);
+        VxBoxShape shape = new VxBoxShape(new Vec3(fullSize.getX() / 2, fullSize.getY() / 2, fullSize.getZ() / 2));
 
-        try (ShapeSettings shapeSettings = new BoxShapeSettings(new Vec3(fullSize.getX() / 2, fullSize.getY() / 2, fullSize.getZ() / 2)); BodyCreationSettings bcs = new BodyCreationSettings()) {
+        try (BodyCreationSettings bcs = new BodyCreationSettings()) {
             bcs.setMotionType(EMotionType.Dynamic);
             bcs.setObjectLayer(VxPhysicsLayers.MOVING);
 
@@ -53,7 +55,7 @@ public class DeagleFrame extends VxBody implements IGrabbable {
 
             massProperties.scaleToMass(1.15f);
             bcs.setMassPropertiesOverride(massProperties);
-            return factory.create(shapeSettings, bcs);
+            return factory.create(shape, bcs);
         }
     }
 
@@ -131,5 +133,4 @@ public class DeagleFrame extends VxBody implements IGrabbable {
     public boolean canRelease(Player player, PlayerBodyPart bodyPart) {
         return true;
     }
-
 }

@@ -5,7 +5,6 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -16,7 +15,7 @@ import net.xmx.velthoric.core.body.client.renderer.VxBodyRenderer;
 import net.xmx.velthoric.math.VxConversions;
 
 @Environment(EnvType.CLIENT)
-public class DeagleFrameRenderer extends VxBodyRenderer<VxBody> {
+public class DeagleSlideRenderer extends VxBodyRenderer<VxBody> {
     @Override
     public void render(VxBody body, PoseStack poseStack, MultiBufferSource bufferSource, float partialTicks, int packedLight, VxRenderState renderState) {
         DeagleFrameModel.init();
@@ -29,7 +28,7 @@ public class DeagleFrameRenderer extends VxBodyRenderer<VxBody> {
         poseStack.scale(DeagleFrameModel.MODEL_SCALE, DeagleFrameModel.MODEL_SCALE, DeagleFrameModel.MODEL_SCALE);
 
         VertexConsumer consumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(DeagleFrameModel.TEXTURE_LOCATION));
-        DeagleFrameModel.getFrame().render(poseStack, consumer, packedLight, OverlayTexture.NO_OVERLAY);
+        DeagleFrameModel.getSlide().render(poseStack, consumer, packedLight, OverlayTexture.NO_OVERLAY);
 
         poseStack.popPose();
 

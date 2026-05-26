@@ -4,10 +4,12 @@
  */
 package net.timtaran.interactiveguns.gun.deagle;
 
-import com.github.stephengold.joltjni.Quat;
-import com.github.stephengold.joltjni.RVec3;
+import com.github.stephengold.joltjni.enumerate.EActivation;
+import com.github.stephengold.joltjni.enumerate.EMotionType;
 import net.timtaran.interactiveguns.gun.deagle.body.DeagleFrame;
-import net.xmx.velthoric.core.body.VxBody;
+import net.timtaran.interactiveguns.gun.deagle.body.DeagleMagazine;
+import net.timtaran.interactiveguns.gun.deagle.body.DeagleSlide;
+import net.timtaran.interactiveguns.init.registry.BodyRegistry;
 import net.xmx.velthoric.core.body.VxBodyType;
 import net.xmx.velthoric.core.physics.world.VxPhysicsWorld;
 import net.xmx.velthoric.math.VxTransform;
@@ -20,30 +22,32 @@ public class Deagle {
      *
      * @return VxBody of pistol frame
      */
-    public static VxBody create(VxBodyType type, VxPhysicsWorld world, UUID id) {
+    public static DeagleFrame create(VxBodyType<DeagleFrame> type, VxPhysicsWorld world, UUID id) {
         DeagleFrame frame = new DeagleFrame(type, world, id);
 
-        VxTransform transform = new VxTransform(
-                new RVec3(0f, 0f, 0f),
-                new Quat()
-        );
-//        DeagleChamber chamber = (DeagleChamber) world.getBodyManager().createBody(
-//                BodyRegistry.DEAGLE_CHAMBER,
-//                transform,
-//                EActivation.Activate,
-//                body -> {
-//                    body.setServerData(DeagleChamber.CARTRIDGE_AMOUNT, 0);
-//                }
-//        );
+        world.execute(() -> {
+            VxTransform transform = frame.getTransform();
 
-//        DeagleBolt bolt = (DeagleBolt) world.getBodyManager().createBody(
-//                BodyRegistry.DEAGLE_BOLT,
-//                transform,
-//                EActivation.Activate,
-//                body -> {
-//                }
-//        );
+            DeagleMagazine magazine = world.getBodyManager().createBody(
+                    BodyRegistry.DEAGLE_MAGAZINE,
+                    transform,
+                    EMotionType.Dynamic,
+                    EActivation.Activate,
+                    body -> {
+                    }
+            );
+
+            DeagleSlide slide = world.getBodyManager().createBody(
+                    BodyRegistry.DEAGLE_SLIDE,
+                    transform,
+                    EMotionType.Dynamic,
+                    EActivation.Activate,
+                    body -> {
+                    }
+            );
+        });
 
         return frame;
+
     }
 }
