@@ -20,13 +20,14 @@ dependencies {
     })
 
     modImplementation("net.fabricmc:fabric-loader:${commonMod.dep("fabric_loader")}")
-    modApi("net.fabricmc.fabric-api:fabric-api:${commonMod.dep("fabric_api")}+${commonMod.mc}")
+    modImplementation("net.fabricmc.fabric-api:fabric-api:${commonMod.dep("fabric_api")}+${commonMod.mc}")
 
     // Required dependencies
     modImplementation("com.terraformersmc:modmenu:${commonMod.dep("modmenu")}")
 
-    modApi("net.xmx.velthoric:velthoric-fabric:${commonMod.dep("velthoric")}")
-    modApi("net.timtaran.interactivemc:interactivemc-fabric:${commonMod.dep("interactivemc")}")
+    modImplementation("net.xmx.velthoric:velthoric-${commonMod.mc}-fabric:${commonMod.dep("velthoric")}")
+    modImplementation("dev.isxander:yet-another-config-lib:${commonMod.dep("yacl")}+${commonMod.mc}-fabric")
+    modImplementation("net.timtaran.interactivemc:interactivemc-fabric:${commonMod.dep("interactivemc")}")
 
     modImplementation(commonMod.modrinth("vivecraft", "${commonMod.dep("vivecraft")}-fabric"))
     runtimeOnly("org.lwjgl:lwjgl-openvr:${commonMod.dep("lwjgl")}")

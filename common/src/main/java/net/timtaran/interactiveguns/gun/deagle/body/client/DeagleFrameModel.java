@@ -45,13 +45,13 @@ public class DeagleFrameModel {
                 .texOffs(0, 106).addBox(3.2F, -36.8F, -8.0F, 2.4F, 4.8F, 32.0F, new CubeDeformation(0.0F))
                 .texOffs(85, 68).addBox(-5.6F, -36.8F, -8.0F, 2.4F, 4.8F, 32.0F, new CubeDeformation(0.0F))
                 .texOffs(122, 135).addBox(-5.6F, -39.2F, -32.0F, 2.4F, 7.2F, 24.0F, new CubeDeformation(0.0F))
-                .texOffs(26, 184).addBox(-1.616F, -44.2128F, -27.44F, 3.232F, 1.8128F, 1.28F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+                .texOffs(26, 184).addBox(-1.616F, -44.2128F, -27.44F, 3.232F, 1.8128F, 1.28F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
         PartDefinition sight_r1 = slide.addOrReplaceChild("sight_r1", CubeListBuilder.create().texOffs(183, 113).addBox(-4.0F, -3.2F, 0.0F, 3.2F, 3.2F, 3.2F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.4F, -41.6F, -28.0F, -0.6109F, 0.0F, 0.0F));
 
         PartDefinition magazine = partdefinition.addOrReplaceChild("magazine", CubeListBuilder.create().texOffs(138, 106).addBox(-4.0F, -1.6F, -27.2F, 8.0F, 0.8F, 14.416F, new CubeDeformation(0.0F))
                 .texOffs(0, 184).addBox(-4.776F, -1.6F, -17.6F, 0.784F, 0.8F, 4.816F, new CubeDeformation(0.0F))
-                .texOffs(13, 184).addBox(3.936F, -1.6F, -17.6F, 0.784F, 0.8F, 4.816F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+                .texOffs(13, 184).addBox(3.936F, -1.6F, -17.6F, 0.784F, 0.8F, 4.816F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 24.0F, 0.0F));
 
         PartDefinition cube_r1 = magazine.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(0, 144).addBox(-4.0F, -28.8F, -7.088F, 8.0F, 27.2F, 12.0F, new CubeDeformation(0.0F))
                 .texOffs(182, 0).addBox(-4.0F, -1.6F, 0.912F, 8.0F, 1.44F, 4.0F, new CubeDeformation(0.0F))
@@ -66,7 +66,7 @@ public class DeagleFrameModel {
                 .texOffs(64, 183).addBox(-4.4F, -27.2F, -0.8F, 8.8F, 6.4F, 1.2F, new CubeDeformation(0.0F))
                 .texOffs(41, 167).addBox(-4.4F, -28.8F, -9.6F, 8.8F, 1.6F, 12.8F, new CubeDeformation(0.0F))
                 .texOffs(175, 139).addBox(3.184F, -3.264F, -26.208F, 1.6F, 2.4F, 12.0F, new CubeDeformation(0.0F))
-                .texOffs(86, 181).addBox(-4.784F, -3.28F, -26.208F, 1.6F, 2.08F, 12.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+                .texOffs(86, 181).addBox(-4.784F, -3.28F, -26.208F, 1.6F, 2.08F, 12.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 21.0F, 0.0F));
 
         PartDefinition cube_r2 = frame.addOrReplaceChild("cube_r2", CubeListBuilder.create().texOffs(182, 36).addBox(-4.8F, -2.688F, -1.44F, 9.6F, 2.4F, 1.6F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, -1.28F, -12.8F, 0.48F, 0.0F, 0.0F));
 
