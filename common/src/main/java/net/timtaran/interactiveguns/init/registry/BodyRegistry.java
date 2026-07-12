@@ -33,7 +33,6 @@ public class BodyRegistry {
                     .add(new VxPersistenceBehavior(DeagleFrame::writePersistenceData, DeagleFrame::readPersistenceData))
                     .add(new VxSummonableBehavior())
                     .add(new VxKillBehavior())
-                    .add(new VxTickBehavior())
             )
             .build(InteractiveGunsIdentifier.get("deagle_frame"));
 
@@ -56,6 +55,7 @@ public class BodyRegistry {
                     .add(new VxNetSyncBehavior())
                     .add(new VxPersistenceBehavior())
                     .add(new VxKillBehavior())
+                    .add(new VxTickBehavior())
             )
             .build(InteractiveGunsIdentifier.get("deagle_slide"));
 

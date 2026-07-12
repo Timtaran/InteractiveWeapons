@@ -9,6 +9,7 @@ import com.github.stephengold.joltjni.enumerate.EMotionType;
 import com.github.stephengold.joltjni.readonly.QuatArg;
 import com.github.stephengold.joltjni.readonly.RVec3Arg;
 import net.minecraft.world.entity.player.Player;
+import net.timtaran.interactiveguns.gun.deagle.logic.DeagleVRLogic;
 import net.timtaran.interactivemc.body.player.PlayerBodyPart;
 import net.timtaran.interactivemc.body.type.GrabPoint;
 import net.timtaran.interactivemc.body.type.IGrabbable;
@@ -26,12 +27,18 @@ import java.util.UUID;
 public class DeagleSlide extends VxBody implements IGrabbable {
     public boolean grabAllowed = false;
 
+    private DeagleVRLogic logic;
+
     public DeagleSlide(VxBodyType type, VxPhysicsWorld physicsWorld, UUID id) {
         super(type, physicsWorld, id);
     }
 
     public DeagleSlide(VxBodyType type, UUID id) {
         super(type, id);
+    }
+
+    public void setLogic(DeagleVRLogic logic) {
+        this.logic = logic;
     }
 
     public static int createJoltBody(VxBody body, VxRigidBodyFactory factory) {
@@ -44,7 +51,6 @@ public class DeagleSlide extends VxBody implements IGrabbable {
         try (BodyCreationSettings bcs = new BodyCreationSettings()) {
             bcs.setMotionType(EMotionType.Dynamic);
             bcs.setObjectLayer(PhysicsLayerRegistry.getGhostLayer());
-            System.out.println(PhysicsLayerRegistry.getGhostLayer());
 
             MassProperties massProperties = bcs.getMassPropertiesOverride();
             massProperties.scaleToMass(0.6f);
@@ -66,5 +72,12 @@ public class DeagleSlide extends VxBody implements IGrabbable {
     @Override
     public @Nullable GrabPoint getRemoteGrabPoint(Player player, PlayerBodyPart bodyPart, RVec3Arg intersectionPoint) {
         return null;
+    }
+
+    @Override
+    public void onPhysicsTick(VxPhysicsWorld world) {
+        if (logic == null)
+            return;
+        logic.updateSlideState();
     }
 }

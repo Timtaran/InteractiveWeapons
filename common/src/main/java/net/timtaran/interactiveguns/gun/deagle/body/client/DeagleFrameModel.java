@@ -1,3 +1,7 @@
+/*
+ * This file is part of Interactive Guns.
+ * Licensed under GPL 3.0.
+ */
 package net.timtaran.interactiveguns.gun.deagle.body.client;
 
 import net.minecraft.client.Minecraft;

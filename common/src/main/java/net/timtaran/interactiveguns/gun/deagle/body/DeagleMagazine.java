@@ -53,7 +53,6 @@ public class DeagleMagazine extends VxBody implements IGrabbable {
         try (BodyCreationSettings bcs = new BodyCreationSettings()) {
             bcs.setMotionType(EMotionType.Dynamic);
             bcs.setObjectLayer(PhysicsLayerRegistry.getGhostLayer());
-            System.out.println(PhysicsLayerRegistry.getGhostLayer());
 
             MassProperties massProperties = bcs.getMassPropertiesOverride();
             massProperties.scaleToMass(0.3f);
@@ -97,6 +96,7 @@ public class DeagleMagazine extends VxBody implements IGrabbable {
     }
 
     public void decreaseCartridgeAmount(int amount) {
-        setServerData(CARTRIDGE_AMOUNT, Math.max(0, get(CARTRIDGE_AMOUNT) - amount));
+        //todo: enable
+        //setServerData(CARTRIDGE_AMOUNT, Math.max(0, get(CARTRIDGE_AMOUNT) - amount));
     }
 }
